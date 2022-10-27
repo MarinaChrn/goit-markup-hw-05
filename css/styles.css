@@ -117,13 +117,29 @@ body {
 
 .header-link {
     font-weight: 500;
-    line-height: 1,14;
+    line-height: 1.14;
     letter-spacing: 0.02em; 
     color: #212121;
+    transition: color 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-active {
     color: #2196F3;
+    position: relative;
+}
+
+.nav-active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #2196F3;
+    border-radius: 2px;
+    position: absolute;
+    top: 47px;
+    right: 0;
+    cursor: default;
 }
 
 .header-link:hover, .header-link:focus {
@@ -149,6 +165,8 @@ body {
     color: #757575;
     display: flex;
     align-items: center;
+    transition: color 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-link:hover, .contacts-link:focus {
@@ -201,6 +219,8 @@ body {
     border-radius: 4px;
     padding: 10px 32px;
     min-width: 152px;
+    transition: background-color 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover {
@@ -305,7 +325,27 @@ body {
     gap: 30px;
 }
 
-.work-list-item {}
+.work-list-item {
+    position: relative;
+}
+
+.work-list-about {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(16/14);
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: rgba(47, 48, 58, 0.8);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
 
 /*-----------------------TEAM---------------------*/
 
@@ -379,6 +419,9 @@ body {
     align-items: center;
     background-color: #fff;
     border-radius: 50%;
+    transition: background-color 250ms,
+    color 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-link:hover, .team-soc-link:focus {
@@ -434,6 +477,8 @@ body {
     justify-content: center;
     align-items: center;
     color: #AFB1B8;
+    transition: color 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icon {
@@ -479,6 +524,8 @@ body {
     line-height: 1.71;
     color: rgba(255, 255, 255, 0.6);
     font-style: normal;
+    transition: color 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-logo {
@@ -552,11 +599,13 @@ body {
     border-radius: 4px;
     border: none;
     padding: 6px 25px;
+    transition: color 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .catalog-list-btn:hover, .catalog-list-btn:focus {
     color: #FFFFFF;
-    background: #2196F3;
+    background-color: #2196F3;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -579,9 +628,11 @@ body {
 }
 
 .project-link {
+    width: 100%;
     display: block;
     text-decoration: none;
-
+    transition: box-shadow 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-link:hover, .project-link:focus {
@@ -605,3 +656,28 @@ body {
     line-height: 1.88;
     color: #757575;
 }
+
+.project-link:hover .project-top-text {
+    transform: translateY(0);
+}
+
+.project-top-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-top-text {
+    position: absolute;
+    top: 0;
+    padding: 63px 24px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    background-color: rgba(33, 150, 243, 0.9);
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: auto;
