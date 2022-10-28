@@ -710,7 +710,7 @@ body {
     color: #757575;
 }
 
-.project-link:hover .project-top-text {
+.project-link:hover .project-top-text, .project-link:focus .project-top-text {
     transform: translateY(0);
 }
 
